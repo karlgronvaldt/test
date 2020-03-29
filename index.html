@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="6z9SksDdaMiyVPFQA1ISN3EDg7sJBZD7LdkJn3Bh">
+
+    <title>Laravel</title>
+
+    <!-- Scripts -->
+    <script src="/js/app.js" defer></script>
+
+        <!-- Mapbox GL JS -->
+    <script src="/js/map.js" defer></script>
+
+    <style type="text/css">
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        #modal {
+            z-index: 1;
+            position: relative;
+            margin: auto;
+        }
+        #modalbtn {
+            z-index: 1;
+            position: relative;
+            left: .3em;
+            top: .3em;
+            background: gray;
+            color: white;
+            border: none;
+            height: 3em;
+            width: 5em;
+            border-radius: .2em;
+            font-size: 2em;
+            opacity: .3;
+            border: 1px solid black;
+        }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="/css/app.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div id="app">
+        <button id="modalbtn" @click="showModal = !showModal">?</button>
+        <locdata-component v-if="showModal" id="modal">
+
+        </locdata-component>
+    </div>
+
+    <main class="py-4">
+            <div id='map'></div>
+    </main>
+</body>
+</html>
